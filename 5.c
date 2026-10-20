@@ -1,17 +1,26 @@
+
 #include<stdio.h>
+void swap(int *x,int *y){
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
 
-
-int main(){
-    int m,n,i;
-    printf("write the number ");
-    scanf("%d",&n);
-    printf(" the table is here \n");
-    for(i=1;i<=10;i++){
-        m=n*i;
-      printf(" %d * %d  = %d\n",n,i,m);
-      
-    
 }
-printf(" the value has %d digits",m);
+
+int main (){
+    int *left,*right;
+    int arr[9]= {34,23,3,42,1,2,7,9,87};
+    printf("the previous array is   ");
+    for(int i = 0;i<9;i++){
+        printf(" %d  ",*(arr+i));
+    }
+    left = &arr;
+    right = (&arr+ 8);
+    swap(left,right);
+    for(int i = 0;i<9;i++){
+    printf(" %d  ",*(arr+i));
+    }
+    
     return 0;
 }
